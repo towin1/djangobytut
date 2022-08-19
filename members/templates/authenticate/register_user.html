@@ -1,45 +1,37 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 
- {% if  form.errors %}
-
-<p>there was an error with your form</p>
-
-{% endif %}
-
-
+{% if form.errors %}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            There was an error with your form...
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
 
 
 
+{% endif %}	
+
+	<div class="shadow p-4 mb-5 bg-body rounded">
+	<h1>Register</h1>
+<br/>
 
 
+		<form action="{% url 'register_user' %}" method=POST>
+			{% csrf_token %}
+
+			{{ form.as_p }}
+
+  
 
 
+			
+<br/><br/>
+			<input type="submit" value="Submit" class="btn btn-secondary">
 
-
-
-
-<h1>Register</h1>
-<br><br>
-    <form method=POST action="" >
-
-      {% csrf_token %}
-          {{form}}
-            
-          <input type='submit' value="Submit" class="btn btn-bd-forsite">
-          <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/members/login_user">Log In</a>
-    </form>
-
-
-{% endblock content %}
-
-
-
-
-
-
-
-
-
+		</form>
+		
+</div>
+<br/><br/>	
+{% endblock %}
 <!-- {% url 'register_user'%} -->
