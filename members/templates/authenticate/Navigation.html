@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <html>
+    <h1>
+      Navigation
+    </h1>
+    <form method=POST action="">
+      {% csrf_token %}
+
+      <input type='submit' value="Logout" class="btn btn-bd-forsite" name="NAV">
+      <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/PRA/PDFRIp">JPG Ripper</a>
+      <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/CSV/CSVrip">PDF to CSV</a>
+
+    </form>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

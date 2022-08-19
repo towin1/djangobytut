@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <title>Home</title>
+    <h1>Home Screen</h1> 
+    
+    <body> 
+    
+        <!--<a href="https://djangobytut.khatfield.repl.co/admin/"></a>
+        -->
+        <br>
+        <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/join">Sign Up!</a>
+        <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/members/login_user">Log In</a>
+        
+    </body>
+    <body> 
+        <br><br>
+        {%for item in all%}
+          <p1>Name: {{ item }}</p1><br>
+        {% endfor%}
+    </body>
+
+
+{% endblock content %}

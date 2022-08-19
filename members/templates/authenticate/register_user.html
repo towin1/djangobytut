@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ {% if  form.errors %}
+
+<p>there was an error with your form</p>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Register</h1>
+<br><br>
+    <form method=POST action="" >
+
+      {% csrf_token %}
+          {{form}}
+            
+          <input type='submit' value="Submit" class="btn btn-bd-forsite">
+          <a type="button" class="btn btn-bd-forsite" href="https://djangobytut.khatfield.repl.co/members/login_user">Log In</a>
+    </form>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+<!-- {% url 'register_user'%} -->
