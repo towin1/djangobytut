@@ -17,7 +17,6 @@ from django_project.settings import MEDIA_ROOT
 
 
 
-
 def CSVrip(request):
   if request.method  == "POST":
     form = UploadFileFormCSV(request.POST, request.FILES)
@@ -27,7 +26,7 @@ def CSVrip(request):
         print('1')
         #file = form.save(commit = False)
         form.save()
-        #PDF = request.POST.get('image')
+        # PDF = request.POST.get('image')
         # PDF=open(MEDIA_ROOT+'/PDF/'+
         #                 os.listdir(MEDIA_ROOT+'/PDF/')[0])
         # zz=open(PDF,"rb")
@@ -45,13 +44,13 @@ def CSVrip(request):
         #   #print("added 1 to x")
         #   #print("loop"+str(x))
         
-        #   table = tableman.read_pdf(name2, pages=str(x),flavor='stream',table_areas=['45,1300,425,35'],
+        #   table = tableman.read_pdf(PDF, pages=str(x),flavor='stream',table_areas=['45,1300,425,35'],
         #                             columns=['72,120,220,350,500'],row_tol=12)
         #   table
-        #   table.export(name+str(x)+".csv", f=csv , compress=True)
+        #   table.export('name'+str(x)+".csv", f=csv , compress=True)
         #   table[0]
         #   table[0].parsing_report
-        #   table[0].to_csv(name+str(x)+".csv")
+        #   table[0].to_csv('name'+str(x)+".csv")
         
       
 

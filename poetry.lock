@@ -7,22 +7,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
-
-[[package]]
-name = "camelot"
-version = "13.04.13-gpl-pyqt"
-description = "A python GUI framework on top of Sqlalchemy and Qt, inspired by the Django admin interface. Start building desktop applications at warp speed, simply by adding some additional information to you model definition."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-chardet = "2.1.1"
-Jinja2 = "2.6"
-SQLAlchemy = "0.8.0"
-xlrd = "0.9.0"
-xlwt = "0.7.4"
+tests = ["mypy (>=0.800)", "pytest-asyncio", "pytest"]
 
 [[package]]
 name = "certifi"
@@ -31,14 +16,6 @@ description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
 optional = false
 python-versions = ">=3.6"
-
-[[package]]
-name = "chardet"
-version = "2.1.1"
-description = "Universal encoding detector"
-category = "main"
-optional = false
-python-versions = "*"
 
 [[package]]
 name = "distlib"
@@ -62,8 +39,8 @@ pytz = "*"
 sqlparse = ">=0.2.2"
 
 [package.extras]
-argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+argon2 = ["argon2-cffi (>=19.1.0)"]
 
 [[package]]
 name = "filelock"
@@ -74,8 +51,8 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-docs = ["furo (>=2022.6.21)", "sphinx (>=5.1.1)", "sphinx-autodoc-typehints (>=1.19.1)"]
-testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pytest-cov (>=3)", "pytest-timeout (>=2.1)"]
+testing = ["pytest-timeout (>=2.1)", "pytest-cov (>=3)", "pytest (>=7.1.2)", "coverage (>=6.4.2)", "covdefaults (>=2.2)"]
+docs = ["sphinx-autodoc-typehints (>=1.19.1)", "sphinx (>=5.1.1)", "furo (>=2022.6.21)"]
 
 [[package]]
 name = "ghostscript"
@@ -84,17 +61,6 @@ description = "Interface to the Ghostscript C-API, both high- and low-level, bas
 category = "main"
 optional = false
 python-versions = "*"
-
-[[package]]
-name = "jinja2"
-version = "2.6"
-description = "A small but fast and easy to use stand-alone template engine written in pure python."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.extras]
-i18n = ["Babel (>=0.8)"]
 
 [[package]]
 name = "numpy"
@@ -114,10 +80,10 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 numpy = [
-    {version = ">=1.21.2", markers = "python_version >= \"3.10\" or python_version >= \"3.6\" and platform_system == \"Darwin\" and platform_machine == \"arm64\""},
-    {version = ">=1.19.3", markers = "python_version >= \"3.6\" and platform_system == \"Linux\" and platform_machine == \"aarch64\" or python_version >= \"3.9\""},
-    {version = ">=1.14.5", markers = "python_version >= \"3.7\""},
+    {version = ">=1.19.3", markers = "python_version >= \"3.9\" or python_version >= \"3.6\" and platform_system == \"Linux\" and platform_machine == \"aarch64\""},
     {version = ">=1.17.3", markers = "python_version >= \"3.8\""},
+    {version = ">=1.14.5", markers = "python_version >= \"3.7\""},
+    {version = ">=1.21.2", markers = "python_version >= \"3.6\" and platform_system == \"Darwin\" and platform_machine == \"arm64\" or python_version >= \"3.10\""},
 ]
 
 [[package]]
@@ -140,8 +106,8 @@ optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues (>=3.0.1)", "sphinx-removed-in", "sphinxext-opengraph"]
-tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
+tests = ["pytest-timeout", "pytest-cov", "pytest", "pyroma", "packaging", "olefile", "markdown2", "defusedxml", "coverage", "check-manifest"]
+docs = ["sphinxext-opengraph", "sphinx-removed-in", "sphinx-issues (>=3.0.1)", "sphinx-copybutton", "sphinx (>=2.4)", "olefile", "furo"]
 
 [[package]]
 name = "pipenv"
@@ -157,8 +123,8 @@ virtualenv = "*"
 virtualenv-clone = ">=0.2.5"
 
 [package.extras]
-dev = ["towncrier", "bs4", "sphinx", "flake8 (>=3.3.0,<4.0)", "parver", "invoke", "black"]
-tests = ["pytest (>=5.0)", "pytest-timeout", "pytest-xdist", "flaky", "mock"]
+tests = ["mock", "flaky", "pytest-xdist", "pytest-timeout", "pytest (>=5.0)"]
+dev = ["black", "invoke", "parver", "flake8 (>=3.3.0,<4.0)", "sphinx", "bs4", "towncrier"]
 
 [[package]]
 name = "platformdirs"
@@ -192,21 +158,7 @@ optional = false
 python-versions = ">=3.6.8"
 
 [package.extras]
-diagrams = ["railroad-diagrams", "jinja2"]
-
-[[package]]
-name = "pypdf2"
-version = "2.10.2"
-description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-typing-extensions = {version = "*", markers = "python_version < \"3.10\""}
-
-[package.extras]
-crypto = ["pycryptodome"]
+diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pytesseract"
@@ -237,14 +189,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "sqlalchemy"
-version = "0.8.0"
-description = "Database Abstraction Library"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "sqlparse"
 version = "0.4.2"
 description = "A non-validating SQL parser."
@@ -261,14 +205,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "typing-extensions"
-version = "4.3.0"
-description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
 name = "virtualenv"
 version = "20.16.3"
 description = "Virtual Python Environment builder"
@@ -282,8 +218,8 @@ filelock = ">=3.4.1,<4"
 platformdirs = ">=2.4,<3"
 
 [package.extras]
-docs = ["proselint (>=0.13)", "sphinx (>=5.1.1)", "sphinx-argparse (>=0.3.1)", "sphinx-rtd-theme (>=1)", "towncrier (>=21.9)"]
-testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7)", "packaging (>=21.3)", "pytest (>=7.0.1)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.2)", "pytest-mock (>=3.6.1)", "pytest-randomly (>=3.10.3)", "pytest-timeout (>=2.1)"]
+testing = ["pytest-timeout (>=2.1)", "pytest-randomly (>=3.10.3)", "pytest-mock (>=3.6.1)", "pytest-freezegun (>=0.4.2)", "pytest-env (>=0.6.2)", "pytest (>=7.0.1)", "packaging (>=21.3)", "flaky (>=3.7)", "coverage-enable-subprocess (>=1)", "coverage (>=6.2)"]
+docs = ["towncrier (>=21.9)", "sphinx-rtd-theme (>=1)", "sphinx-argparse (>=0.3.1)", "sphinx (>=5.1.1)", "proselint (>=0.13)"]
 
 [[package]]
 name = "virtualenv-clone"
@@ -293,37 +229,18 @@ category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
-[[package]]
-name = "xlrd"
-version = "0.9.0"
-description = "Library for developers to extract data from Microsoft Excel (tm) spreadsheet files"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "xlwt"
-version = "0.7.4"
-description = "Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform, with Python 2.3 to 2.7"
-category = "main"
-optional = false
-python-versions = "*"
-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "f0a27f1987a56600c420ab23f585af52bfa6922403b4d4523c9a9cb330bf9a07"
+content-hash = "8a78e974be1d407988fec5560edcb2bcb8b7918c09401dabc471fae8b29bc1f8"
 
 [metadata.files]
 asgiref = []
-camelot = []
 certifi = []
-chardet = []
 distlib = []
 django = []
 filelock = []
 ghostscript = []
-jinja2 = []
 numpy = []
 opencv-contrib-python = []
 packaging = []
@@ -332,15 +249,10 @@ pipenv = []
 platformdirs = []
 pyocr = []
 pyparsing = []
-pypdf2 = []
 pytesseract = []
 python3-ghostscript = []
 pytz = []
-sqlalchemy = []
 sqlparse = []
 tesseract = []
-typing-extensions = []
 virtualenv = []
 virtualenv-clone = []
-xlrd = []
-xlwt = []
